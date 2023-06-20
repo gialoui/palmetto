@@ -1,3 +1,13 @@
+server:
+  port: 8081
 spring:
   config:
     name: datasource
+  application:
+    name: pizzeria-service
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
