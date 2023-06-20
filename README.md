@@ -35,7 +35,13 @@ However, sometimes we might run into the situation where we don't have enough in
 This repository consists of 3 microservices:
 - order: A service for receiving and storing incoming orders from clients
 - courier: In the first version, this service will only be responsible for notifying the client that the order has been shipped. We'll definitely improve in the next launch.
-- pizzeria: A service to manage the menu, authenticate parlor and facilitate status update for the order
+- pizzeria: A service to manage the menu, authenticate parlor and facilitate status update for the orders
 
 ![alt text](https://github.com/gialoui/palmetto/blob/main/blob/architecture.png?raw=true)
 
+## Local Development
+
+### Prerequisites
+1. JDK 17+
+2. Gradle
+3. Docker (in order to start Kafka service)
