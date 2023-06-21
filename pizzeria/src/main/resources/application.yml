@@ -2,7 +2,7 @@ server:
   port: 8081
 spring:
   config:
-    name: datasource
+    import: classpath:datasource.yml
   application:
     name: pizzeria-service
 eureka:

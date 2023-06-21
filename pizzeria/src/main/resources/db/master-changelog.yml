@@ -1,0 +1,81 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1687309143
+      author: khangndd
+      changes:
+        - createTable:
+            tableName: menu_categories
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+        - createTable:
+            tableName: menu_items
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: category_id
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: decimal
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: updated_at
+                  type: timestamp
+  - changeSet:
+      id: 1687332492
+      author: khangndd
+      changes:
+        - loadData:
+            columns:
+              - column:
+                  header: name
+                  name: name
+                  type: STRING
+            file: classpath:/db/initial-menu-categories-v1.csv
+            separator: ','
+            tableName: menu_categories
+        - loadData:
+            columns:
+              - column:
+                  header: name
+                  name: name
+                  type: STRING
+              - column:
+                  header: category_id
+                  name: category_id
+                  type: NUMERIC
+              - column:
+                  header: price
+                  name: price
+                  type: NUMERIC
+            file: classpath:/db/initial-menu-items-v1.csv
+            separator: ','
+            tableName: menu_items
