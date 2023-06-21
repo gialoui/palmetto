@@ -5,14 +5,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.Set;
 
 /**
  * @author khangndd
@@ -32,6 +29,6 @@ public class MenuCategoryEntity {
     @Column(nullable = false)
     private String name;
 
-    @OneToMany(mappedBy = "category")
-    private Set<MenuItemEntity> items;
+//    @OneToMany(mappedBy = "category")
+//    private Set<MenuItemEntity> items;
 }
