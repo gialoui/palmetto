@@ -74,7 +74,7 @@ services:
     command: "bash -c 'echo Waiting for Kafka to be ready... && \
                        cub kafka-ready -b kafka-broker-1:9092 1 20 && \
                        cub kafka-ready -b kafka-broker-2:9093 1 20 && \
-                       kafka-topics --create --topic orders --partitions 2 --replication-factor 2 --if-not-exists --bootstrap-server kafka-broker-1:9092'"
+                       kafka-topics --create --topic order.status-changed --partitions 2 --replication-factor 2 --if-not-exists --bootstrap-server kafka-broker-1:9092'"
     environment:
       # The following settings are listed here only to satisfy the image's requirements.
       # We override the image's `command` anyways, hence this container will not start a broker.
